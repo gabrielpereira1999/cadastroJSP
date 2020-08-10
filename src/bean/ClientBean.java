@@ -1,29 +1,41 @@
 package bean;
 
+import java.util.ArrayList;
+
 public class ClientBean {
 	
-	private int idClient;
     private String nameClient;
     private String addressClient;
     private String stateClient;
     private String cityClient;
     private String cpfClient;
+    private ArrayList<String> telephonesClient = new ArrayList<String>();
+    
+    
+    public ClientBean(String nameClient, String addressClient, String stateClient, String cityClient,
+			String cpfClient) {
+		super();
+		this.nameClient = nameClient;
+		this.addressClient = addressClient;
+		this.stateClient = stateClient;
+		this.cityClient = cityClient;
+		this.cpfClient = cpfClient;
+	}
 
-    public ClientBean(String nameClient, String addressClient, String stateClient, String cityClient, String cpfClient) {
-        this.nameClient = nameClient;
-        this.addressClient = addressClient;
-        this.stateClient = stateClient;
-        this.cityClient = cityClient;
-        this.cpfClient = cpfClient;
-    }
-
-    public int getIdClient() {
-        return idClient;
-    }
-
-    public void setIdClient(int idClient) {
-        this.idClient = idClient;
-    }
+	public ClientBean(String nameClient, String addressClient, String stateClient, String cityClient,
+			String cpfClient, ArrayList<String> telephonesClient) {
+		super();
+		this.nameClient = nameClient;
+		this.addressClient = addressClient;
+		this.stateClient = stateClient;
+		this.cityClient = cityClient;
+		this.cpfClient = cpfClient;
+		this.telephonesClient = telephonesClient;
+	}
+	
+	public String toString() {
+		return "Nome: " + this.nameClient + "/nCidade:" + this.cityClient + "/nEstado: " + this.stateClient + "/nEndereço: " + this.addressClient + "/nCPF: " + this.cpfClient + "/nTelefone(s): " + this.telephonesClient;
+	}
 
     public String getNameClient() {
         return nameClient;
@@ -64,4 +76,15 @@ public class ClientBean {
     public void setCpfClient(String cpfClient) {
         this.cpfClient = cpfClient;
     }
+    
+
+	public ArrayList<String> getTelephonesClient() {
+		return telephonesClient;
+	}
+
+	public void setTelephonesClient(ArrayList<String> telephonesClient) {
+		this.telephonesClient = telephonesClient;
+	}
+
+    
 }

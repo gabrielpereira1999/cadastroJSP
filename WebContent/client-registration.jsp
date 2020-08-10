@@ -55,6 +55,14 @@
 			</div>
 		</div>
 		<input type="hidden" id="telephoneParameter" name="telephoneParameter"/>
+		<c:if test="${client == null}">
+			<div class="form-group row">
+				<label for="telephone" class="col-sm-2 col-form-label">Telefone</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control telephone" id="telephone" name="telephone" required>
+				</div>
+			</div>
+		</c:if>
 		<c:forEach var="telephone" items="${client.telephonesClient}">
 			<div class="form-group row">
 				<label for="telephone" class="col-sm-2 col-form-label">Telefone</label>

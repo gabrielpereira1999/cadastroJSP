@@ -9,11 +9,12 @@ public class DBConnection {
 
         String user = "root";
         String password = "";
-        String url = "jdbc:mysql//localhost/testejsp";
+        String url = "jdbc:mysql://localhost:3306/testejsp?serverTimezone=UTC";
 
         Connection connection = null;
 
         try {
+        	Class.forName("com.mysql.cj.jdbc.Driver");
             connection = DriverManager.getConnection(url, user, password);
         } catch(Exception connectionError) {
             System.out.println("Falha na conexão com o banco: " + connectionError.getMessage());

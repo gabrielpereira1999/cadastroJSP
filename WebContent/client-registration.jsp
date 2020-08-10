@@ -20,10 +20,10 @@
 	
 	<c:if test="${client != null}">
 		<form action="update" method="post" id="form">
-     </c:if>
-     <c:if test="${client == null}">
+    </c:if>
+    <c:if test="${client == null}">
 		<form action="insert" method="post" id="form">
-     </c:if>
+    </c:if>
 		<div class="form-group row">
 			<label for="name" class="col-sm-2 col-form-label">Nome</label>
 			<div class="col-sm-10">
@@ -33,7 +33,7 @@
 		<div class="form-group row">
 			<label for="cpf" class="col-sm-2 col-form-label">CPF</label>
 			<div class="col-sm-10">
-				<input type="text" class="form-control" id="cpf" name="cpf" required value="<c:out value='${client.cpfClient}' />">
+				<input type="text" class="form-control" id="cpf" name="cpf" required <c:if test="${client != null}">disabled</c:if> value="<c:out value='${client.cpfClient}' />">
 			</div>
 		</div>
 		<div class="form-group row">
